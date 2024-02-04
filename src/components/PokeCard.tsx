@@ -27,7 +27,7 @@ export default function PokeCard({ pokeApi }: { pokeApi: PokeApi }) {
             </Col>
             <Col>
               <ListGroup className="text-start">
-                <ListGroup.Item>
+                <ListGroup.Item key="poke_name">
                   <strong>Type: </strong> {
                     pokeApi.types.map((type) => (
                       type.type.name.charAt(0).toUpperCase()
@@ -36,15 +36,15 @@ export default function PokeCard({ pokeApi }: { pokeApi: PokeApi }) {
                     )
                   }
                 </ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item key="strength">
                   <strong>Height:</strong> {pokeApi.height}
                 </ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item key="weight">
                   <strong>Weight:</strong> {pokeApi.weight}
                 </ListGroup.Item>
                 {
                   pokeApi.stats.map(stat => (
-                    <ListGroup.Item>
+                    <ListGroup.Item key={stat.stat.name}>
                       <strong>
                         {
                           stat.stat.name == "hp"

@@ -11,7 +11,6 @@ export default function PokeSelector({ className }: { className?: string }) {
       <Form.Select
         aria-label="pokemon"
         onChange={(event) => {
-          console.log(event.currentTarget.value);
           navigate(`/pokemon/${event.currentTarget.value}`)
         }}
         defaultValue={"def"}
